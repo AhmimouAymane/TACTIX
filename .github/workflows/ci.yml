@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  lint-typecheck-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install backend dependencies
+        working-directory: backend
+        run: npm ci
+
+      - name: Install admin dependencies
+        working-directory: admin
+        run: npm ci
+
+      - name: Lint backend
+        working-directory: backend
+        run: npm run lint --if-present
+
+      - name: Typecheck backend
+        working-directory: backend
+        run: npm run typecheck --if-present
+
+      - name: Lint admin
+        working-directory: admin
+        run: npm run lint --if-present
+
+      - name: Typecheck admin
+        working-directory: admin
+        run: npm run typecheck --if-present
+
+      - name: Unit tests backend
+        working-directory: backend
+        run: npm test --if-present
+
+      - name: Unit tests admin
+        working-directory: admin
+        run: npm test --if-present
+
+  build-images:
+    needs: lint-typecheck-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.REGISTRY }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
+
+      - name: Build and push backend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ secrets.REGISTRY }}/tactix/backend:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push admin
+        uses: docker/build-push-action@v5
+        with:
+          context: ./admin
+          push: true
+          tags: ${{ secrets.REGISTRY }}/tactix/admin:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
