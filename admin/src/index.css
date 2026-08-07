@@ -1,0 +1,91 @@
+@import './theme.css';
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+  font-family: var(--txi-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--txi-bg-app);
+  color: var(--txi-text-primary);
+  font-size: var(--txi-font-body);
+  line-height: 1.5;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img,
+svg,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background-color: var(--txi-color-primary);
+  color: var(--txi-bg-app);
+}
+
+.txi-app {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--txi-bg-page);
+  font-size: var(--txi-font-body);
+  color: var(--txi-text-primary);
+}
+
+.txi-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--txi-space-6);
+}
+
+.txi-page-title {
+  font-size: var(--txi-font-headline);
+  font-weight: 700;
+  color: var(--txi-text-primary);
+  margin-bottom: var(--txi-space-4);
+}
+
+.txi-card {
+  background-color: var(--txi-bg-card);
+  border: 1px solid var(--txi-bg-border);
+  border-radius: var(--txi-radius-lg);
+  box-shadow: var(--txi-shadow-card);
+  padding: var(--txi-space-4);
+}

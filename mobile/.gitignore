@@ -1,0 +1,19 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+.packages
+*.iml
+.idea/
+.metadata
+.dart_tool/package_config.json
+.gradle/
+local.properties
+**/android/.gradle/
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/ephemeral/
+*.lock
+flutter_*.png
+coverage/

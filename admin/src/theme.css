@@ -1,0 +1,104 @@
+/*
+ * TACTIX Design System - Theme Tokens
+ * Source: docs/design/Design_System.md
+ * Dark-first by default, light mode optional.
+ */
+
+:root {
+  --txi-color-primary: #ffb020; /* Amber / Orange */
+  --txi-color-primary-hover: #ff9a0f;
+  --txi-color-primary-active: #e09d0c;
+
+  /* ===== Accents ===== */
+  --txi-color-pitch-green: #10b981;
+  --txi-color-live-red: #ef4444;
+  --txi-color-social-blue: #3b82f6;
+  --txi-color-gold: #f59e0b;
+
+  /* ===== Neutrals - Text ===== */
+  --txi-text-primary: #ffffff;
+  --txi-text-secondary: #94a3b8;
+  --txi-text-muted: #64748b;
+  --txi-text-disabled: #475569;
+
+  /* ===== Neutrals - Surfaces (dark) ===== */
+  --txi-bg-app: #0f172a;
+  --txi-bg-page: #0f172a;
+  --txi-bg-raider: #0b1120;
+  --txi-bg-card: #1e293b;
+  --txi-bg-card-hover: #273449;
+  --txi-bg-input: #1e293b;
+  --txi-bg-input-hover: #334159;
+  --txi-bg-border: #334159;
+  --txi-bg-border-strong: #475569;
+
+  /* ===== Semantic ===== */
+  --txi-color-success: #10b981;
+  --txi-color-warning: #f59e0b;
+  --txi-color-error: #ef4444;
+  --txi-color-info: #3b82f6;
+}
+
+/* Light mode (optional) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --txi-text-primary: #0f172a;
+    --txi-text-secondary: #334159;
+    --txi-text-muted: #64748b;
+    --txi-text-disabled: #94a3b8;
+
+    --txi-bg-app: #f8fafc;
+    --txi-bg-page: #f1f5f9;
+    --txi-bg-raider: #e2e8f0;
+    --txi-bg-card: #ffffff;
+    --txi-bg-card-hover: #f1f5f9;
+    --txi-bg-input: #f1f5f9;
+    --txi-bg-input-hover: #e2e8f0;
+    --txi-bg-border: #cbd5e1;
+    --txi-bg-border-strong: #94a3b8;
+  }
+}
+
+/* ===== Typography (Inter) — loaded via <link> in index.html ===== */
+:root {
+  --txi-font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --txi-font-display: 32px;
+  --txi-font-headline: 24px;
+  --txi-font-title: 18px;
+  --txi-font-body: 16px;
+  --txi-font-caption: 13px;
+  --txi-font-label: 12px;
+}
+
+/* ===== Spacing (base 4px) ===== */
+:root {
+  --txi-space-1: 4px;
+  --txi-space-2: 8px;
+  --txi-space-3: 12px;
+  --txi-space-4: 16px;
+  --txi-space-5: 20px;
+  --txi-space-6: 24px;
+  --txi-space-8: 32px;
+}
+
+/* ===== Radii ===== */
+:root {
+  --txi-radius-sm: 8px;
+  --txi-radius-md: 12px;
+  --txi-radius-lg: 16px;
+  --txi-radius-pill: 999px;
+}
+
+/* ===== Shadows ===== */
+:root {
+  --txi-shadow-card: 0 8px 24px 0 rgba(0, 0, 0, 0.25);
+  --txi-shadow-bottom: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Motion ===== */
+:root {
+  --txi-motion-quick: 150ms;
+  --txi-motion-standard: 250ms;
+  --txi-motion-emphasis: 400ms;
+  --txi-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
