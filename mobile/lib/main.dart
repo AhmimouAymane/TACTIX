@@ -5,6 +5,11 @@ import 'package:tactix/l10n/app_localizations.dart';
 import 'package:tactix/core/core.dart';
 import 'package:tactix/shared/widgets/widgets.dart';
 
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const ProviderScope(child: TactixApp()));
+}
+
 class TactixApp extends ConsumerWidget {
   const TactixApp({super.key});
 

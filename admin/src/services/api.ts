@@ -82,12 +82,11 @@ export interface MockFetchOptions {
 
 function jsonResponse<T>(data: T, init: { status?: number; meta?: Record<string, unknown> } = {}): MockResponse {
   const status = init.status ?? 200;
-  const payload = init.meta ? { data, meta: init.meta } : { data };
   return {
     ok: status >= 200 && status < 300,
     status,
     statusText: status === 200 ? 'OK' : 'Error',
-    json: async () => payload,
+    json: async () => data,
     headers: new Headers({ 'Content-Type': 'application/json' }),
   };
 }
