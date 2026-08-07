@@ -32,6 +32,7 @@
   "alreadyHaveAccount": "Already have an account? ",
   "login": "Sign In",
   "register": "Sign Up",
+  "signOut": "Sign Out",
   "comingSoon": "Coming Soon",
   "homeComingSoonDesc": "Home screen with live matches, deadlines, and news will be available soon.",
   "liveComingSoonDesc": "Live match tracking with real-time updates will be available soon.",

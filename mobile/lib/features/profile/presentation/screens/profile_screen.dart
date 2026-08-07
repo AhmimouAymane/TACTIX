@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tactix/l10n/app_localizations.dart';
 import 'package:tactix/core/core.dart';
 import 'package:tactix/shared/widgets/widgets.dart';
@@ -34,7 +35,7 @@ class ProfileScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _buildProfileHeader(context, l10n, authState),
+                  _buildProfileHeader(context, ref, l10n, authState),
                   const SizedBox(height: AppSpacing.xxl),
                   _buildSectionCard(context, l10n),
                   const SizedBox(height: AppSpacing.lg),
@@ -50,6 +51,7 @@ class ProfileScreen extends ConsumerWidget {
 
   Widget _buildProfileHeader(
     BuildContext context,
+    WidgetRef ref,
     AppLocalizations l10n,
     AuthState authState,
   ) {
@@ -85,6 +87,31 @@ class ProfileScreen extends ConsumerWidget {
                           color: Theme.of(context).colorScheme.onSurfaceVariant,
                         ),
                   ),
+                  const SizedBox(height: AppSpacing.md),
+                  if (isAuthenticated)
+                    OutlinedButton.icon(
+                      onPressed: () => ref.read(authControllerProvider.notifier).logout(),
+                      icon: const Icon(Icons.logout),
+                      label: Text(l10n.signOut),
+                    )
+                  else
+                    Row(
+                      children: [
+                        Expanded(
+                          child: FilledButton(
+                            onPressed: () => context.go(AppRoutes.login),
+                            child: Text(l10n.login),
+                          ),
+                        ),
+                        const SizedBox(width: AppSpacing.md),
+                        Expanded(
+                          child: OutlinedButton(
+                            onPressed: () => context.go(AppRoutes.register),
+                            child: Text(l10n.register),
+                          ),
+                        ),
+                      ],
+                    ),
                 ],
               ),
             ),

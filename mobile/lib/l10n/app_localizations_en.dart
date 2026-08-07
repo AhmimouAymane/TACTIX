@@ -105,6 +105,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get register => 'Sign Up';
 
   @override
+  String get signOut => 'Sign Out';
+
+  @override
   String get comingSoon => 'Coming Soon';
 
   @override

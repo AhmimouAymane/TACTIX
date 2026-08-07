@@ -105,6 +105,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get register => 'S\'inscrire';
 
   @override
+  String get signOut => 'Se déconnecter';
+
+  @override
   String get comingSoon => 'Bientôt disponible';
 
   @override

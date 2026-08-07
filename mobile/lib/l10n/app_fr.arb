@@ -32,6 +32,7 @@
   "alreadyHaveAccount": "Déjà un compte ? ",
   "login": "Se connecter",
   "register": "S'inscrire",
+  "signOut": "Se déconnecter",
   "comingSoon": "Bientôt disponible",
   "homeComingSoonDesc": "L'écran d'accueil avec les matchs en direct, échéances et actualités sera bientôt disponible.",
   "liveComingSoonDesc": "Le suivi des matchs en direct avec mises à jour temps réel sera bientôt disponible.",

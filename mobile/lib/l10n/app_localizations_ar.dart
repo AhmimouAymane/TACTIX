@@ -105,6 +105,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get register => 'إنشاء حساب';
 
   @override
+  String get signOut => 'تسجيل الخروج';
+
+  @override
   String get comingSoon => 'قريباً';
 
   @override

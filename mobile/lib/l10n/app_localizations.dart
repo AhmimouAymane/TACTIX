@@ -289,6 +289,12 @@ abstract class AppLocalizations {
   /// **'Sign Up'**
   String get register;
 
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
+
   /// No description provided for @comingSoon.
   ///
   /// In en, this message translates to:

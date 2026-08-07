@@ -5,7 +5,10 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class ApiConstants {
   const ApiConstants._();
 
-  static const String baseUrl = 'https://api.tactix.app/v1';
+  static const String baseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue: 'http://10.0.2.2:3000/api/v1',
+  );
   static const Duration connectTimeout = Duration(seconds: 30);
   static const Duration receiveTimeout = Duration(seconds: 30);
   static const Duration sendTimeout = Duration(seconds: 30);
@@ -32,6 +35,8 @@ class DioClient {
           options.headers['Accept-Language'] = 'en';
           handler.next(options);
         },
+        // Keep the token-refresh-on-401 flow: attempt a silent refresh using
+        // the stored refresh token, then replay the failed request.
         onError: (error, handler) async {
           if (error.response?.statusCode == 401) {
             final refreshed = await _refreshToken();
@@ -85,22 +90,42 @@ class DioClient {
       );
 
       if (response.statusCode == 200 && response.data != null) {
-        final data = response.data as Map<String, dynamic>;
-        final newAccessToken = data['access_token'] as String?;
-        final newRefreshToken = data['refresh_token'] as String?;
-
-        if (newAccessToken != null) {
-          await _secureStorage.write(key: 'access_token', value: newAccessToken);
+        final pair = tokenPair(response.data as Map<String, dynamic>);
+        if (pair != null) {
+          await _secureStorage.write(
+            key: 'access_token',
+            value: pair.accessToken,
+          );
+          await _secureStorage.write(
+            key: 'refresh_token',
+            value: pair.refreshToken,
+          );
+          return true;
         }
-        if (newRefreshToken != null) {
-          await _secureStorage.write(key: 'refresh_token', value: newRefreshToken);
-        }
-        return true;
       }
       return false;
     } catch (_) {
       return false;
     }
+  }
+
+  /// Extracts the auth token pair from a backend auth envelope that nests
+  /// tokens under `data['tokens']`:
+  /// `{ ..., tokens: { access_token, refresh_token, ... } }`.
+  static ({String accessToken, String refreshToken})? tokenPair(
+    Map<String, dynamic> data,
+  ) {
+    final tokens = data['tokens'];
+    if (tokens is! Map<String, dynamic>) return null;
+    final accessToken = tokens['access_token'];
+    final refreshToken = tokens['refresh_token'];
+    if (accessToken is! String ||
+        accessToken.isEmpty ||
+        refreshToken is! String ||
+        refreshToken.isEmpty) {
+      return null;
+    }
+    return (accessToken: accessToken, refreshToken: refreshToken);
   }
 
   Future<void> _clearTokens() async {

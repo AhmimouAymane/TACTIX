@@ -15,7 +15,7 @@ class AuthController extends StateNotifier<AuthState> {
     state = const AuthState.loading();
 
     try {
-      final response = await _dioClient.dio.post(
+      final response = await _dioClient.dio.post<dynamic>(
         '/auth/login',
         data: {
           'email': email,
@@ -25,15 +25,19 @@ class AuthController extends StateNotifier<AuthState> {
 
       if (response.statusCode == 200 && response.data != null) {
         final data = response.data as Map<String, dynamic>;
-        final accessToken = data['access_token'] as String?;
-        final refreshToken = data['refresh_token'] as String?;
-        final user = data['user'] as Map<String, dynamic>?;
 
-        if (accessToken != null && refreshToken != null && user != null) {
-          await _dioClient.setAuthTokens(accessToken, refreshToken);
+        if (data['requires_mfa'] == true) {
+          state = const AuthState.error(message: 'MFA required');
+          return;
+        }
+
+        final user = data['user'] as Map<String, dynamic>?;
+        final pair = DioClient.tokenPair(data);
+        if (pair != null && user != null) {
+          await _dioClient.setAuthTokens(pair.accessToken, pair.refreshToken);
           state = AuthState.authenticated(
-            accessToken: accessToken,
-            refreshToken: refreshToken,
+            accessToken: pair.accessToken,
+            refreshToken: pair.refreshToken,
             userId: user['id'] as String? ?? '',
             email: user['email'] as String? ?? email,
           );
@@ -65,28 +69,25 @@ class AuthController extends StateNotifier<AuthState> {
     state = const AuthState.loading();
 
     try {
-      final response = await _dioClient.dio.post(
+      final response = await _dioClient.dio.post<dynamic>(
         '/auth/register',
         data: {
           'email': email,
+          'username': _deriveUsername(email),
           'password': password,
-          'name': name,
-          'favorite_club_id': favoriteClubId,
-          'preferred_language': preferredLanguage ?? 'en',
+          'display_name': name,
         },
       );
 
       if (response.statusCode == 201 && response.data != null) {
         final data = response.data as Map<String, dynamic>;
-        final accessToken = data['access_token'] as String?;
-        final refreshToken = data['refresh_token'] as String?;
         final user = data['user'] as Map<String, dynamic>?;
-
-        if (accessToken != null && refreshToken != null && user != null) {
-          await _dioClient.setAuthTokens(accessToken, refreshToken);
+        final pair = DioClient.tokenPair(data);
+        if (pair != null && user != null) {
+          await _dioClient.setAuthTokens(pair.accessToken, pair.refreshToken);
           state = AuthState.authenticated(
-            accessToken: accessToken,
-            refreshToken: refreshToken,
+            accessToken: pair.accessToken,
+            refreshToken: pair.refreshToken,
             userId: user['id'] as String? ?? '',
             email: user['email'] as String? ?? email,
           );
@@ -109,8 +110,33 @@ class AuthController extends StateNotifier<AuthState> {
   }
 
   Future<void> logout() async {
+    try {
+      await _dioClient.dio.post<dynamic>('/auth/logout');
+    } catch (_) {
+      // Backend logout is best-effort; local tokens are cleared regardless.
+    }
     await _dioClient.clearAuthTokens();
     state = const AuthState.unauthenticated();
+  }
+
+  /// Derives a backend-compatible username (3-24 chars, [a-zA-Z0-9_.])
+  /// from the email local part, falling back to `user` + short hash.
+  static String _deriveUsername(String email) {
+    final localPart = email.split('@').first.toLowerCase();
+    final cleaned = localPart.replaceAll(RegExp(r'[^a-z0-9_.]'), '');
+    if (cleaned.length >= 3) {
+      return cleaned.length > 24 ? cleaned.substring(0, 24) : cleaned;
+    }
+    return 'user${_fnv1aHex(email)}';
+  }
+
+  static String _fnv1aHex(String input) {
+    var hash = 0x811c9dc5;
+    for (final codeUnit in input.codeUnits) {
+      hash ^= codeUnit;
+      hash = (hash * 0x01000193) & 0xFFFFFFFF;
+    }
+    return hash.toRadixString(16).padLeft(8, '0');
   }
 
   void clearError() {
