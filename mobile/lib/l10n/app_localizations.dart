@@ -417,6 +417,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Manage notification preferences'**
   String get notificationsDesc;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// No description provided for @errorLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t load data'**
+  String get errorLoading;
+
+  /// No description provided for @emptyState.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet'**
+  String get emptyState;
+
+  /// No description provided for @gameweek.
+  ///
+  /// In en, this message translates to:
+  /// **'Gameweek'**
+  String get gameweek;
+
+  /// No description provided for @gameweekNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Gameweek {number}'**
+  String gameweekNumber(String number);
+
+  /// No description provided for @currentGameweek.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Gameweek'**
+  String get currentGameweek;
+
+  /// No description provided for @upcomingFixtures.
+  ///
+  /// In en, this message translates to:
+  /// **'Upcoming fixtures'**
+  String get upcomingFixtures;
+
+  /// No description provided for @deadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Deadline'**
+  String get deadline;
+
+  /// No description provided for @viewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all'**
+  String get viewAll;
+
+  /// No description provided for @kickoff.
+  ///
+  /// In en, this message translates to:
+  /// **'Kickoff'**
+  String get kickoff;
+
+  /// No description provided for @matchEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'Match events'**
+  String get matchEvents;
+
+  /// No description provided for @noFixtures.
+  ///
+  /// In en, this message translates to:
+  /// **'No fixtures to show'**
+  String get noFixtures;
+
+  /// No description provided for @noEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'No match events yet'**
+  String get noEvents;
+
+  /// No description provided for @statusAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get statusAll;
+
+  /// No description provided for @statusScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled'**
+  String get statusScheduled;
+
+  /// No description provided for @statusLive.
+  ///
+  /// In en, this message translates to:
+  /// **'Live'**
+  String get statusLive;
+
+  /// No description provided for @statusFinished.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished'**
+  String get statusFinished;
+
+  /// No description provided for @statusPostponed.
+  ///
+  /// In en, this message translates to:
+  /// **'Postponed'**
+  String get statusPostponed;
+
+  /// No description provided for @statusCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get statusCancelled;
 }
 
 class _AppLocalizationsDelegate

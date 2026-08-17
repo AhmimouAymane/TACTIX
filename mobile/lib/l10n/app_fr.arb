@@ -52,5 +52,29 @@
   "theme": "Thème",
   "themeDesc": "Choisissez votre thème préféré",
   "notifications": "Notifications",
-  "notificationsDesc": "Gérez vos préférences de notification"
+  "notificationsDesc": "Gérez vos préférences de notification",
+  "retry": "Réessayer",
+  "errorLoading": "Impossible de charger les données",
+  "emptyState": "Rien pour le moment",
+  "gameweek": "Journée",
+  "gameweekNumber": "Journée {number}",
+  "@gameweekNumber": {
+    "placeholders": {
+      "number": {"type": "String"}
+    }
+  },
+  "currentGameweek": "Journée en cours",
+  "upcomingFixtures": "Matchs à venir",
+  "deadline": "Date limite",
+  "viewAll": "Tout voir",
+  "kickoff": "Coup d'envoi",
+  "matchEvents": "Événements du match",
+  "noFixtures": "Aucun match à afficher",
+  "noEvents": "Aucun événement pour le moment",
+  "statusAll": "Toutes",
+  "statusScheduled": "Programmée",
+  "statusLive": "En direct",
+  "statusFinished": "Terminée",
+  "statusPostponed": "Reportée",
+  "statusCancelled": "Annulée"
 }

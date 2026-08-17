@@ -52,5 +52,29 @@
   "theme": "Theme",
   "themeDesc": "Choose your preferred theme",
   "notifications": "Notifications",
-  "notificationsDesc": "Manage notification preferences"
+  "notificationsDesc": "Manage notification preferences",
+  "retry": "Retry",
+  "errorLoading": "Couldn't load data",
+  "emptyState": "Nothing here yet",
+  "gameweek": "Gameweek",
+  "gameweekNumber": "Gameweek {number}",
+  "@gameweekNumber": {
+    "placeholders": {
+      "number": {"type": "String"}
+    }
+  },
+  "currentGameweek": "Current Gameweek",
+  "upcomingFixtures": "Upcoming fixtures",
+  "deadline": "Deadline",
+  "viewAll": "View all",
+  "kickoff": "Kickoff",
+  "matchEvents": "Match events",
+  "noFixtures": "No fixtures to show",
+  "noEvents": "No match events yet",
+  "statusAll": "All",
+  "statusScheduled": "Scheduled",
+  "statusLive": "Live",
+  "statusFinished": "Finished",
+  "statusPostponed": "Postponed",
+  "statusCancelled": "Cancelled"
 }

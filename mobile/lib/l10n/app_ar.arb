@@ -52,5 +52,29 @@
   "theme": "السمة",
   "themeDesc": "اختر السمة المفضلة",
   "notifications": "الإشعارات",
-  "notificationsDesc": "إدارة تفضيلات الإشعارات"
+  "notificationsDesc": "إدارة تفضيلات الإشعارات",
+  "retry": "إعادة المحاولة",
+  "errorLoading": "تعذر تحميل البيانات",
+  "emptyState": "لا يوجد شيء هنا بعد",
+  "gameweek": "الجولة",
+  "gameweekNumber": "الجولة {number}",
+  "@gameweekNumber": {
+    "placeholders": {
+      "number": {"type": "String"}
+    }
+  },
+  "currentGameweek": "الجولة الحالية",
+  "upcomingFixtures": "المباريات القادمة",
+  "deadline": "الموعد النهائي",
+  "viewAll": "عرض الكل",
+  "kickoff": "الانطلاق",
+  "matchEvents": "أحداث المباراة",
+  "noFixtures": "لا توجد مباريات لعرضها",
+  "noEvents": "لا توجد أحداث بعد",
+  "statusAll": "الكل",
+  "statusScheduled": "مجدولة",
+  "statusLive": "مباشر",
+  "statusFinished": "منتهية",
+  "statusPostponed": "مؤجلة",
+  "statusCancelled": "ملغاة"
 }

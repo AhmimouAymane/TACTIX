@@ -171,4 +171,63 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notificationsDesc => 'Manage notification preferences';
+
+  @override
+  String get retry => 'Retry';
+
+  @override
+  String get errorLoading => 'Couldn\'t load data';
+
+  @override
+  String get emptyState => 'Nothing here yet';
+
+  @override
+  String get gameweek => 'Gameweek';
+
+  @override
+  String gameweekNumber(String number) {
+    return 'Gameweek $number';
+  }
+
+  @override
+  String get currentGameweek => 'Current Gameweek';
+
+  @override
+  String get upcomingFixtures => 'Upcoming fixtures';
+
+  @override
+  String get deadline => 'Deadline';
+
+  @override
+  String get viewAll => 'View all';
+
+  @override
+  String get kickoff => 'Kickoff';
+
+  @override
+  String get matchEvents => 'Match events';
+
+  @override
+  String get noFixtures => 'No fixtures to show';
+
+  @override
+  String get noEvents => 'No match events yet';
+
+  @override
+  String get statusAll => 'All';
+
+  @override
+  String get statusScheduled => 'Scheduled';
+
+  @override
+  String get statusLive => 'Live';
+
+  @override
+  String get statusFinished => 'Finished';
+
+  @override
+  String get statusPostponed => 'Postponed';
+
+  @override
+  String get statusCancelled => 'Cancelled';
 }

@@ -16,6 +16,7 @@ class AppRoutes {
   static const String notifications = '/notifications';
   static const String search = '/search';
   static const String premium = '/premium';
+  static const String fixtureDetail = '/fixtures/:id';
 }
 
 class RouteNames {
@@ -32,4 +33,5 @@ class RouteNames {
   static const String notifications = 'notifications';
   static const String search = 'search';
   static const String premium = 'premium';
+  static const String fixtureDetail = 'fixtureDetail';
 }

@@ -174,4 +174,63 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get notificationsDesc => 'Gérez vos préférences de notification';
+
+  @override
+  String get retry => 'Réessayer';
+
+  @override
+  String get errorLoading => 'Impossible de charger les données';
+
+  @override
+  String get emptyState => 'Rien pour le moment';
+
+  @override
+  String get gameweek => 'Journée';
+
+  @override
+  String gameweekNumber(String number) {
+    return 'Journée $number';
+  }
+
+  @override
+  String get currentGameweek => 'Journée en cours';
+
+  @override
+  String get upcomingFixtures => 'Matchs à venir';
+
+  @override
+  String get deadline => 'Date limite';
+
+  @override
+  String get viewAll => 'Tout voir';
+
+  @override
+  String get kickoff => 'Coup d\'envoi';
+
+  @override
+  String get matchEvents => 'Événements du match';
+
+  @override
+  String get noFixtures => 'Aucun match à afficher';
+
+  @override
+  String get noEvents => 'Aucun événement pour le moment';
+
+  @override
+  String get statusAll => 'Toutes';
+
+  @override
+  String get statusScheduled => 'Programmée';
+
+  @override
+  String get statusLive => 'En direct';
+
+  @override
+  String get statusFinished => 'Terminée';
+
+  @override
+  String get statusPostponed => 'Reportée';
+
+  @override
+  String get statusCancelled => 'Annulée';
 }

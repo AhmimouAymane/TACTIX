@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'route_names.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/register_screen.dart';
+import '../../features/fixtures/presentation/screens/fixture_detail_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/live/presentation/screens/live_screen.dart';
 import '../../features/team/presentation/screens/team_screen.dart';
@@ -58,6 +59,13 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: AppRoutes.register,
         name: RouteNames.register,
         builder: (context, state) => const RegisterScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.fixtureDetail,
+        name: RouteNames.fixtureDetail,
+        builder: (context, state) => FixtureDetailScreen(
+          fixtureId: state.pathParameters['id'] ?? '',
+        ),
       ),
     ],
     errorBuilder: (context, state) => Scaffold(

@@ -170,4 +170,63 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get notificationsDesc => 'إدارة تفضيلات الإشعارات';
+
+  @override
+  String get retry => 'إعادة المحاولة';
+
+  @override
+  String get errorLoading => 'تعذر تحميل البيانات';
+
+  @override
+  String get emptyState => 'لا يوجد شيء هنا بعد';
+
+  @override
+  String get gameweek => 'الجولة';
+
+  @override
+  String gameweekNumber(String number) {
+    return 'الجولة $number';
+  }
+
+  @override
+  String get currentGameweek => 'الجولة الحالية';
+
+  @override
+  String get upcomingFixtures => 'المباريات القادمة';
+
+  @override
+  String get deadline => 'الموعد النهائي';
+
+  @override
+  String get viewAll => 'عرض الكل';
+
+  @override
+  String get kickoff => 'الانطلاق';
+
+  @override
+  String get matchEvents => 'أحداث المباراة';
+
+  @override
+  String get noFixtures => 'لا توجد مباريات لعرضها';
+
+  @override
+  String get noEvents => 'لا توجد أحداث بعد';
+
+  @override
+  String get statusAll => 'الكل';
+
+  @override
+  String get statusScheduled => 'مجدولة';
+
+  @override
+  String get statusLive => 'مباشر';
+
+  @override
+  String get statusFinished => 'منتهية';
+
+  @override
+  String get statusPostponed => 'مؤجلة';
+
+  @override
+  String get statusCancelled => 'ملغاة';
 }
