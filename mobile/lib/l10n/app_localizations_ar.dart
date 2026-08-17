@@ -111,19 +111,23 @@ class AppLocalizationsAr extends AppLocalizations {
   String get comingSoon => 'قريباً';
 
   @override
-  String get homeComingSoonDesc => 'ستتوفر شاشة الرئيسية مع المباريات المباشرة والمواعيد والأخبار قريباً.';
+  String get homeComingSoonDesc =>
+      'ستتوفر شاشة الرئيسية مع المباريات المباشرة والمواعيد والأخبار قريباً.';
 
   @override
-  String get liveComingSoonDesc => 'ستتوفر متابعة المباريات المباشرة مع التحديثات الفورية قريباً.';
+  String get liveComingSoonDesc =>
+      'ستتوفر متابعة المباريات المباشرة مع التحديثات الفورية قريباً.';
 
   @override
-  String get teamComingSoonDesc => 'ستتوفر إدارة التشكيلة الخيالية مع عرض الملعب قريباً.';
+  String get teamComingSoonDesc =>
+      'ستتوفر إدارة التشكيلة الخيالية مع عرض الملعب قريباً.';
 
   @override
   String get leaguesComingSoonDesc => 'ستتوفر إنشاء وإدارة الدوريات قريباً.';
 
   @override
-  String get profileComingSoonDesc => 'ستتوفر إعدادات الملف الشخصي والتفضيلات قريباً.';
+  String get profileComingSoonDesc =>
+      'ستتوفر إعدادات الملف الشخصي والتفضيلات قريباً.';
 
   @override
   String get navHome => 'الرئيسية';

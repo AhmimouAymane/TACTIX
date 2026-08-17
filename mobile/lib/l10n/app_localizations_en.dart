@@ -111,19 +111,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get comingSoon => 'Coming Soon';
 
   @override
-  String get homeComingSoonDesc => 'Home screen with live matches, deadlines, and news will be available soon.';
+  String get homeComingSoonDesc =>
+      'Home screen with live matches, deadlines, and news will be available soon.';
 
   @override
-  String get liveComingSoonDesc => 'Live match tracking with real-time updates will be available soon.';
+  String get liveComingSoonDesc =>
+      'Live match tracking with real-time updates will be available soon.';
 
   @override
-  String get teamComingSoonDesc => 'Fantasy squad management with pitch view will be available soon.';
+  String get teamComingSoonDesc =>
+      'Fantasy squad management with pitch view will be available soon.';
 
   @override
-  String get leaguesComingSoonDesc => 'League creation and management will be available soon.';
+  String get leaguesComingSoonDesc =>
+      'League creation and management will be available soon.';
 
   @override
-  String get profileComingSoonDesc => 'Profile settings and preferences will be available soon.';
+  String get profileComingSoonDesc =>
+      'Profile settings and preferences will be available soon.';
 
   @override
   String get navHome => 'Home';

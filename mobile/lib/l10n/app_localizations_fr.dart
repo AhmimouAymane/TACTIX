@@ -21,13 +21,15 @@ class AppLocalizationsFr extends AppLocalizations {
   String get homeWelcome => 'Bienvenue !';
 
   @override
-  String get homeSubtitle => 'Gérez votre équipe fantasy et suivez les scores en direct';
+  String get homeSubtitle =>
+      'Gérez votre équipe fantasy et suivez les scores en direct';
 
   @override
   String get liveTitle => 'Matchs en Direct';
 
   @override
-  String get liveSubtitle => 'Suivez les scores en direct et les événements des matchs';
+  String get liveSubtitle =>
+      'Suivez les scores en direct et les événements des matchs';
 
   @override
   String get teamTitle => 'Mon Équipe';
@@ -63,7 +65,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get passwordRequired => 'Le mot de passe est requis';
 
   @override
-  String get passwordMinLength => 'Le mot de passe doit contenir au moins 6 caractères';
+  String get passwordMinLength =>
+      'Le mot de passe doit contenir au moins 6 caractères';
 
   @override
   String get confirmPasswordLabel => 'Confirmer le mot de passe';
@@ -111,19 +114,24 @@ class AppLocalizationsFr extends AppLocalizations {
   String get comingSoon => 'Bientôt disponible';
 
   @override
-  String get homeComingSoonDesc => 'L\'écran d\'accueil avec les matchs en direct, échéances et actualités sera bientôt disponible.';
+  String get homeComingSoonDesc =>
+      'L\'écran d\'accueil avec les matchs en direct, échéances et actualités sera bientôt disponible.';
 
   @override
-  String get liveComingSoonDesc => 'Le suivi des matchs en direct avec mises à jour temps réel sera bientôt disponible.';
+  String get liveComingSoonDesc =>
+      'Le suivi des matchs en direct avec mises à jour temps réel sera bientôt disponible.';
 
   @override
-  String get teamComingSoonDesc => 'La gestion d\'effectif fantasy avec vue terrain sera bientôt disponible.';
+  String get teamComingSoonDesc =>
+      'La gestion d\'effectif fantasy avec vue terrain sera bientôt disponible.';
 
   @override
-  String get leaguesComingSoonDesc => 'La création et gestion de ligues sera bientôt disponible.';
+  String get leaguesComingSoonDesc =>
+      'La création et gestion de ligues sera bientôt disponible.';
 
   @override
-  String get profileComingSoonDesc => 'Les paramètres de profil et préférences seront bientôt disponibles.';
+  String get profileComingSoonDesc =>
+      'Les paramètres de profil et préférences seront bientôt disponibles.';
 
   @override
   String get navHome => 'Accueil';
