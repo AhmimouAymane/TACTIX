@@ -9,7 +9,7 @@ import { TokenService } from './token.service';
 import { MfaService } from './mfa.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { RefreshStrategy } from './strategies/refresh.strategy';
-import { InMemoryUserRepository } from './repositories/in-memory-user.repository';
+import { PrismaUserRepository } from './repositories/prisma-user.repository';
 import { InMemoryRefreshTokenStore } from './repositories/in-memory-refresh-token.store';
 import { USER_REPOSITORY } from './interfaces/user-repository.interface';
 import { REFRESH_TOKEN_STORE } from './interfaces/refresh-token-store.interface';
@@ -36,7 +36,7 @@ import { REFRESH_TOKEN_STORE } from './interfaces/refresh-token-store.interface'
     MfaService,
     JwtStrategy,
     RefreshStrategy,
-    { provide: USER_REPOSITORY, useClass: InMemoryUserRepository },
+    { provide: USER_REPOSITORY, useClass: PrismaUserRepository },
     { provide: REFRESH_TOKEN_STORE, useClass: InMemoryRefreshTokenStore },
   ],
   exports: [AuthService],

@@ -176,6 +176,8 @@ model User {
   bio               String?
   role              UserRole  @default(USER)
   status            UserStatus @default(UNVERIFIED)
+  mfaEnabled        Boolean   @default(false) @map("mfa_enabled")
+  mfaSecret         String?   @map("mfa_secret")
   emailVerifiedAt   DateTime? @map("email_verified_at")
   createdAt         DateTime  @default(now()) @map("created_at")
   updatedAt         DateTime  @updatedAt @map("updated_at")
@@ -241,6 +243,7 @@ model Club {
   crestUrl  String?  @map("crest_url")
   colors    Json?    // { primary: "#FF0000", secondary: "#FFFFFF" }
   status    String   @default("active")
+  externalId Int?    @unique @map("external_id") // Bzzoiro Sports Data team id
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
@@ -269,6 +272,7 @@ model Player {
   startingPrice  Decimal        @default(0) @map("starting_price") @db.Decimal(5, 1)
   currentPrice   Decimal        @default(0) @map("current_price") @db.Decimal(5, 1)
   previousPrice  Decimal        @default(0) @map("previous_price") @db.Decimal(5, 1)
+  externalId     Int?           @unique @map("external_id") // Bzzoiro Sports Data player id
   createdAt      DateTime       @default(now()) @map("created_at")
   updatedAt      DateTime       @updatedAt @map("updated_at")
 
@@ -334,6 +338,7 @@ model Fixture {
   status        FixtureStatus @default(SCHEDULED)
   homeScore     Int?          @map("home_score")
   awayScore     Int?          @map("away_score")
+  externalId    Int?          @unique @map("external_id") // Bzzoiro Sports Data event id
   createdAt     DateTime      @default(now()) @map("created_at")
   updatedAt     DateTime      @updatedAt @map("updated_at")
 

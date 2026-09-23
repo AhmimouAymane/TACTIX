@@ -21,9 +21,10 @@ process.env.PORT = '3000';
 describe('Auth (e2e)', () => {
   let app: INestApplication;
 
+  const run = Date.now().toString(36);
   const user = {
-    email: 'player@tactix.ma',
-    username: 'player1',
+    email: `player.${run}@tactix.ma`,
+    username: `player1.${run}`,
     password: 'SuperSecret1',
   };
 
@@ -55,7 +56,7 @@ describe('Auth (e2e)', () => {
   it('registers and accesses a guarded endpoint', async () => {
     const register = await request(app.getHttpServer())
       .post('/api/v1/auth/register')
-      .send({ ...user, email: 'player1@tactix.ma', username: 'player1' })
+      .send({ ...user })
       .expect(201);
 
     expect(register.body.tokens.access_token).toBeTruthy();
@@ -66,7 +67,7 @@ describe('Auth (e2e)', () => {
       .set('Authorization', `Bearer ${register.body.tokens.access_token}`)
       .expect(200);
 
-    expect(session.body.email).toBe('player1@tactix.ma');
+    expect(session.body.email).toBe(user.email);
 
     await request(app.getHttpServer())
       .get('/api/v1/auth/session')
@@ -85,7 +86,7 @@ describe('Auth (e2e)', () => {
   });
 
   it('logs in, rotates refresh tokens, and logs out', async () => {
-    const secondUser = { ...user, email: 'player2@tactix.ma', username: 'player2' };
+    const secondUser = { ...user, email: `player2.${run}@tactix.ma`, username: `player2.${run}` };
     await request(app.getHttpServer()).post('/api/v1/auth/register').send(secondUser).expect(201);
 
     const login = await request(app.getHttpServer())
@@ -122,7 +123,7 @@ describe('Auth (e2e)', () => {
   });
 
   it('change password revokes existing sessions', async () => {
-    const thirdUser = { ...user, email: 'player3@tactix.ma', username: 'player3' };
+    const thirdUser = { ...user, email: `player3.${run}@tactix.ma`, username: `player3.${run}` };
     await request(app.getHttpServer()).post('/api/v1/auth/register').send(thirdUser).expect(201);
 
     const login = await request(app.getHttpServer())
@@ -151,7 +152,7 @@ describe('Auth (e2e)', () => {
   });
 
   it('enables MFA and completes login with a TOTP code', async () => {
-    const mfaUser = { ...user, email: 'mfa@tactix.ma', username: 'mfaplayer' };
+    const mfaUser = { ...user, email: `mfa.${run}@tactix.ma`, username: `mfaplayer.${run}` };
     const register = await request(app.getHttpServer())
       .post('/api/v1/auth/register')
       .send(mfaUser)

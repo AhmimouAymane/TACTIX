@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
-import { LeaguesController } from './leagues.controller';
+import { LeagueInvitationsController, LeaguesController } from './leagues.controller';
 import { LeaguesService } from './leagues.service';
 
 @Module({
-  controllers: [LeaguesController],
+  controllers: [LeaguesController, LeagueInvitationsController],
   providers: [LeaguesService],
-  exports: [LeaguesService],
 })
 export class LeaguesModule {}

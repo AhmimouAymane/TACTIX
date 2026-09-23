@@ -17,6 +17,8 @@ process.env.PORT = '3000';
 describe('Game (e2e)', () => {
   let app: INestApplication;
 
+  const run = Date.now().toString(36);
+
   beforeAll(async () => {
     const moduleRef = await Test.createTestingModule({
       imports: [AppModule],
@@ -111,12 +113,12 @@ describe('Game (e2e)', () => {
       .expect((res) => expect(res.body.error.code).toBe('UNAUTHORIZED'));
   });
 
-  it('requires a valid gameweek and finished fixtures to process', async () => {
+  it('requires finished fixtures to process an open gameweek', async () => {
     const register = await request(app.getHttpServer())
       .post('/api/v1/auth/register')
       .send({
-        email: 'gamer@tactix.ma',
-        username: 'gamer1',
+        email: `gamer.${run}@tactix.ma`,
+        username: `gamer1.${run}`,
         password: 'SuperSecret1',
       })
       .expect(201);
@@ -126,10 +128,15 @@ describe('Game (e2e)', () => {
       .get('/api/v1/gameweeks')
       .expect(200);
 
-    const gameweekId = gameweeks.body[0].id as string;
+    // The open gameweek (current season, kickoff ahead) has no finished
+    // fixtures yet, so processing must be rejected.
+    const open = (gameweeks.body as { id: string; status: string }[]).find(
+      (g) => g.status === 'OPEN',
+    );
+    expect(open).toBeTruthy();
 
     const res = await request(app.getHttpServer())
-      .post(`/api/v1/gameweeks/${gameweekId}/process`)
+      .post(`/api/v1/gameweeks/${open!.id}/process`)
       .set('Authorization', `Bearer ${token}`)
       .expect(400);
 
