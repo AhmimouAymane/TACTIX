@@ -111,6 +111,75 @@ class AppLocalizationsEn extends AppLocalizations {
   String get comingSoon => 'Coming Soon';
 
   @override
+  String get noTeamTitle => 'No team yet';
+
+  @override
+  String get noTeamSubtitle => 'Create your fantasy team to start playing';
+
+  @override
+  String get teamNameLabel => 'Team name';
+
+  @override
+  String get createTeam => 'Create team';
+
+  @override
+  String get mySquad => 'My squad';
+
+  @override
+  String get budget => 'Budget';
+
+  @override
+  String get squadValue => 'Squad value';
+
+  @override
+  String get points => 'Points';
+
+  @override
+  String get pickPlayer => 'Pick player';
+
+  @override
+  String get searchPlayers => 'Search players';
+
+  @override
+  String get saveSquad => 'Save squad';
+
+  @override
+  String get squadSaved => 'Squad saved';
+
+  @override
+  String get captain => 'Captain';
+
+  @override
+  String get viceCaptain => 'Vice-captain';
+
+  @override
+  String get emptySlot => 'Empty';
+
+  @override
+  String get removeFromSquad => 'Remove';
+
+  @override
+  String get editSquad => 'Edit squad';
+
+  @override
+  String get squadFull => 'Squad is full (15 players)';
+
+  @override
+  String get signInToPlay => 'Sign in to manage your team';
+
+  @override
+  String get loadMore => 'Load more';
+
+  @override
+  String get viewPitch => 'Pitch';
+
+  @override
+  String get viewList => 'List';
+
+  @override
+  String get benchTitle => 'Bench';
+
+  @override
   String get homeComingSoonDesc =>
       'Home screen with live matches, deadlines, and news will be available soon.';
 
@@ -212,6 +281,59 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noEvents => 'No match events yet';
+
+  @override
+  String get timelineTitle => 'Key moments';
+
+  @override
+  String get noKeyEvents => 'No key moments yet';
+
+  @override
+  String get topPerformers => 'Top performers';
+
+  @override
+  String fixturesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count fixtures',
+      one: '1 fixture',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String goalsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count goals',
+      one: '1 goal',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String assistsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count assists',
+      one: '1 assist',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String savesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count saves',
+      one: '1 save',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get statusAll => 'All';

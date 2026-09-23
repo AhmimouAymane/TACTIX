@@ -26,7 +26,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final current = ref.read(gameweeksControllerProvider.notifier).current;
     await ref
         .read(fixturesControllerProvider.notifier)
-        .load(gameweekId: current?.id);
+        // Home owns this load: scope to the current gameweek and drop any
+        // status filter left behind by the Live screen (shared controller).
+        .load(
+          gameweekId: current?.id,
+          clearGameweek: current == null,
+          clearStatus: true,
+        );
   }
 
   @override
@@ -167,7 +173,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                       ),
                       const SizedBox(width: AppSpacing.xs),
                       Text(
-                        '${current.fixtureCount} ${l10n.gameweek}',
+                        l10n.fixturesCount(current.fixtureCount!),
                         style: theme.textTheme.bodyMedium?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
                         ),

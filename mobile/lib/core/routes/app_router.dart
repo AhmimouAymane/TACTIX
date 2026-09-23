@@ -9,6 +9,7 @@ import '../../features/fixtures/presentation/screens/fixture_detail_screen.dart'
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/live/presentation/screens/live_screen.dart';
 import '../../features/team/presentation/screens/team_screen.dart';
+import '../../features/team/presentation/screens/squad_builder_screen.dart';
 import '../../features/leagues/presentation/screens/leagues_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../shared/widgets/main_navigation_shell.dart';
@@ -66,6 +67,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => FixtureDetailScreen(
           fixtureId: state.pathParameters['id'] ?? '',
         ),
+      ),
+      GoRoute(
+        path: AppRoutes.squadBuilder,
+        name: RouteNames.squadBuilder,
+        builder: (context, state) => const SquadBuilderScreen(),
       ),
     ],
     errorBuilder: (context, state) => Scaffold(

@@ -34,6 +34,29 @@
   "register": "إنشاء حساب",
   "signOut": "تسجيل الخروج",
   "comingSoon": "قريباً",
+  "noTeamTitle": "لا فريق بعد",
+  "noTeamSubtitle": "أنشئ فريقك الفانتازي لبدء اللعب",
+  "teamNameLabel": "اسم الفريق",
+  "createTeam": "إنشاء الفريق",
+  "mySquad": "تشكيلتي",
+  "budget": "الميزانية",
+  "squadValue": "قيمة التشكيلة",
+  "points": "النقاط",
+  "pickPlayer": "اختر لاعبا",
+  "searchPlayers": "ابحث عن اللاعبين",
+  "saveSquad": "حفظ التشكيلة",
+  "squadSaved": "تم حفظ التشكيلة",
+  "captain": "القائد",
+  "viceCaptain": "نائب القائد",
+  "emptySlot": "فارغ",
+  "removeFromSquad": "إزالة",
+  "editSquad": "تعديل التشكيلة",
+  "squadFull": "اكتملت التشكيلة (15 لاعبا)",
+  "signInToPlay": "سجل الدخول لإدارة فريقك",
+  "loadMore": "تحميل المزيد",
+  "viewPitch": "الملعب",
+  "viewList": "القائمة",
+  "benchTitle": "الاحتياط",
   "homeComingSoonDesc": "ستتوفر شاشة الرئيسية مع المباريات المباشرة والمواعيد والأخبار قريباً.",
   "liveComingSoonDesc": "ستتوفر متابعة المباريات المباشرة مع التحديثات الفورية قريباً.",
   "teamComingSoonDesc": "ستتوفر إدارة التشكيلة الخيالية مع عرض الملعب قريباً.",
@@ -71,6 +94,33 @@
   "matchEvents": "أحداث المباراة",
   "noFixtures": "لا توجد مباريات لعرضها",
   "noEvents": "لا توجد أحداث بعد",
+  "timelineTitle": "أبرز اللحظات",
+  "noKeyEvents": "لا توجد لحظات بارزة بعد",
+  "topPerformers": "نجوم المباراة",
+  "fixturesCount": "{count, plural, =0{لا مباريات} =1{مباراة واحدة} =2{مباراتان} few{{count} مباريات} many{{count} مباراة} other{{count} مباراة}}",
+  "@fixturesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "goalsCount": "{count, plural, =0{لا أهداف} =1{هدف واحد} =2{هدفان} few{{count} أهداف} many{{count} هدفا} other{{count} هدف}}",
+  "@goalsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "assistsCount": "{count, plural, =0{لا تمريرات حاسمة} =1{تمريرة حاسمة واحدة} =2{تمريرتان حاسمتان} few{{count} تمريرات حاسمة} many{{count} تمريرة حاسمة} other{{count} تمريرة حاسمة}}",
+  "@assistsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "savesCount": "{count, plural, =0{لا تصديات} =1{تصد واحد} =2{تصديان} few{{count} تصديات} many{{count} تصديا} other{{count} تصد}}",
+  "@savesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
   "statusAll": "الكل",
   "statusScheduled": "مجدولة",
   "statusLive": "مباشر",

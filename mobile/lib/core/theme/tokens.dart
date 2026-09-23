@@ -3,57 +3,80 @@ import 'package:flutter/material.dart';
 class AppColors {
   const AppColors._();
 
-  static const primary = Color(0xFFFFB020);
-  static const primaryContainer = Color(0xFFFFD54F);
-  static const onPrimary = Color(0xFF1A1A1A);
-  static const onPrimaryContainer = Color(0xFF1A1A1A);
+  // Premier League / FPL brand palette.
+  static const primary = Color(0xFF00FF87);
+  static const primaryContainer = Color(0xFF00CC6A);
+  static const onPrimary = Color(0xFF2A002F);
+  static const onPrimaryContainer = Color(0xFF2A002F);
 
-  static const secondary = Color(0xFF101828);
-  static const secondaryContainer = Color(0xFF0B1120);
+  static const green = Color(0xFF00FF87);
+  static const onGreen = Color(0xFF2A002F);
+
+  static const secondary = Color(0xFF2A002F);
+  static const secondaryContainer = Color(0xFF4C0D52);
   static const onSecondary = Color(0xFFFFFFFF);
   static const onSecondaryContainer = Color(0xFFFFFFFF);
 
-  static const accentGreen = Color(0xFF10B981);
-  static const accentRed = Color(0xFFEF4444);
-  static const accentBlue = Color(0xFF3B82F6);
-  static const accentGold = Color(0xFFF59E0B);
+  static const accentGreen = Color(0xFF00FF87);
+  static const accentRed = Color(0xFFE90052);
+  static const accentBlue = Color(0xFF04F5FF);
+  static const accentGold = Color(0xFFFFC800);
+
+  // Position colors (FPL-style).
+  static const posGk = Color(0xFFFFC800);
+  static const posDef = Color(0xFF04F5FF);
+  static const posMid = Color(0xFF00FF87);
+  static const posFwd = Color(0xFFE90052);
+  static const posSub = Color(0xFFD9B8DD);
+
+  static Color position(String group) => switch (group) {
+        'GK' => posGk,
+        'DEF' => posDef,
+        'MID' => posMid,
+        'FWD' => posFwd,
+        _ => posSub,
+      };
+
+  static Color onPosition(String group) =>
+      group == 'FWD' ? const Color(0xFFFFFFFF) : onPrimary;
 
   static const textPrimary = Color(0xFFFFFFFF);
-  static const textSecondary = Color(0xFF94A3B8);
-  static const textMuted = Color(0xFF64748B);
+  static const textSecondary = Color(0xFFD9B8DD);
+  static const textMuted = Color(0xFFB58BB9);
 
-  static const surfaceCard = Color(0xFF1E293B);
-  static const surfaceBackground = Color(0xFF0F172A);
-  static const surfaceElevated = Color(0xFF1E293B);
+  static const surfaceCard = Color(0xFF4C0D52);
+  static const surfaceBackground = Color(0xFF37003C);
+  static const surfaceElevated = Color(0xFF5A1460);
 
-  static const success = Color(0xFF10B981);
-  static const warning = Color(0xFFF59E0B);
-  static const error = Color(0xFFEF4444);
-  static const info = Color(0xFF3B82F6);
+  static const success = Color(0xFF00FF87);
+  static const warning = Color(0xFFFFC800);
+  static const error = Color(0xFFE90052);
+  static const info = Color(0xFF04F5FF);
 
-  static const divider = Color(0xFF334155);
-  static const outline = Color(0xFF475569);
+  static const divider = Color(0xFF6B3572);
+  static const outline = Color(0xFF8A5C90);
 
-  static const lightPrimary = Color(0xFFFFB020);
-  static const lightPrimaryContainer = Color(0xFFFFF3E0);
-  static const lightOnPrimary = Color(0xFF1A1A1A);
-  static const lightOnPrimaryContainer = Color(0xFF1A1A1A);
+  // Light mode: white surfaces, PL purple text, green CTAs.
+  static const lightPrimary = Color(0xFF37003C);
+  static const lightPrimaryContainer = Color(0xFFEFE0F1);
+  static const lightOnPrimary = Color(0xFFFFFFFF);
+  static const lightOnPrimaryContainer = Color(0xFF37003C);
 
   static const lightSecondary = Color(0xFFFFFFFF);
-  static const lightSecondaryContainer = Color(0xFFF8FAFC);
-  static const lightOnSecondary = Color(0xFF0F172A);
-  static const lightOnSecondaryContainer = Color(0xFF0F172A);
+  static const lightSecondaryContainer = Color(0xFFF6EEF7);
+  static const lightOnSecondary = Color(0xFF37003C);
+  static const lightOnSecondaryContainer = Color(0xFF37003C);
 
-  static const lightTextPrimary = Color(0xFF0F172A);
-  static const lightTextSecondary = Color(0xFF475569);
-  static const lightTextMuted = Color(0xFF64748B);
+  static const lightTextPrimary = Color(0xFF37003C);
+  static const lightTextSecondary = Color(0xFF6B4A70);
+  static const lightTextMuted = Color(0xFF8A6C8F);
 
   static const lightSurfaceCard = Color(0xFFFFFFFF);
-  static const lightSurfaceBackground = Color(0xFFF8FAFC);
+  static const lightSurfaceBackground = Color(0xFFF7F1F8);
   static const lightSurfaceElevated = Color(0xFFFFFFFF);
 
-  static const lightDivider = Color(0xFFE2E8F0);
-  static const lightOutline = Color(0xFFCBD5E1);
+  static const lightDivider = Color(0xFFEADCEF);
+  static const lightOutline = Color(0xFFD4BCD8);
 }
 
 class AppSpacing {
@@ -86,12 +109,12 @@ class AppShadows {
 
   static const elevated = [
     BoxShadow(
-      color: Color(0x1A000000),
+      color: Color(0x4D000000),
       blurRadius: 16,
       offset: Offset(0, 4),
     ),
     BoxShadow(
-      color: Color(0x0D000000),
+      color: Color(0x26000000),
       blurRadius: 4,
       offset: Offset(0, 1),
     ),
@@ -99,7 +122,7 @@ class AppShadows {
 
   static const bottomSheet = [
     BoxShadow(
-      color: Color(0x1A000000),
+      color: Color(0x66000000),
       blurRadius: 24,
       offset: Offset(0, -8),
     ),
@@ -107,7 +130,7 @@ class AppShadows {
 
   static const glow = [
     BoxShadow(
-      color: Color(0x33FFB020),
+      color: Color(0x4D00FF87),
       blurRadius: 24,
       offset: Offset(0, 0),
     ),
@@ -115,70 +138,72 @@ class AppShadows {
 }
 
 class AppTypography {
-  static const fontFamily = 'Inter';
+  static const fontFamily = 'Barlow';
+  static const displayFontFamily = 'BarlowCondensed';
 
   static const displayLarge = TextStyle(
-    fontFamily: fontFamily,
-    fontSize: 32,
+    fontFamily: displayFontFamily,
+    fontSize: 34,
     fontWeight: FontWeight.w700,
-    height: 1.2,
+    height: 1.1,
     letterSpacing: -0.5,
   );
 
   static const displayMedium = TextStyle(
-    fontFamily: fontFamily,
+    fontFamily: displayFontFamily,
     fontSize: 28,
     fontWeight: FontWeight.w700,
-    height: 1.2,
+    height: 1.15,
     letterSpacing: -0.3,
   );
 
   static const displaySmall = TextStyle(
-    fontFamily: fontFamily,
+    fontFamily: displayFontFamily,
     fontSize: 24,
-    fontWeight: FontWeight.w600,
-    height: 1.3,
+    fontWeight: FontWeight.w700,
+    height: 1.2,
   );
 
   static const headlineLarge = TextStyle(
-    fontFamily: fontFamily,
+    fontFamily: displayFontFamily,
     fontSize: 22,
+    fontWeight: FontWeight.w600,
+    height: 1.25,
+  );
+
+  static const headlineMedium = TextStyle(
+    fontFamily: displayFontFamily,
+    fontSize: 20,
     fontWeight: FontWeight.w600,
     height: 1.3,
   );
 
-  static const headlineMedium = TextStyle(
-    fontFamily: fontFamily,
-    fontSize: 20,
-    fontWeight: FontWeight.w600,
-    height: 1.4,
-  );
-
   static const headlineSmall = TextStyle(
-    fontFamily: fontFamily,
+    fontFamily: displayFontFamily,
     fontSize: 18,
     fontWeight: FontWeight.w600,
-    height: 1.4,
+    height: 1.35,
   );
 
   static const titleLarge = TextStyle(
-    fontFamily: fontFamily,
+    fontFamily: displayFontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w600,
-    height: 1.5,
+    height: 1.4,
+    letterSpacing: 0.2,
   );
 
   static const titleMedium = TextStyle(
     fontFamily: fontFamily,
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.5,
   );
 
   static const titleSmall = TextStyle(
     fontFamily: fontFamily,
     fontSize: 12,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.5,
     letterSpacing: 0.1,
   );
@@ -207,21 +232,21 @@ class AppTypography {
   static const labelLarge = TextStyle(
     fontFamily: fontFamily,
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.4,
   );
 
   static const labelMedium = TextStyle(
     fontFamily: fontFamily,
     fontSize: 12,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.4,
   );
 
   static const labelSmall = TextStyle(
     fontFamily: fontFamily,
     fontSize: 11,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     height: 1.4,
     letterSpacing: 0.1,
   );

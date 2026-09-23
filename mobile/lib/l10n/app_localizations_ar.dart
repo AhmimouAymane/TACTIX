@@ -111,6 +111,75 @@ class AppLocalizationsAr extends AppLocalizations {
   String get comingSoon => 'قريباً';
 
   @override
+  String get noTeamTitle => 'لا فريق بعد';
+
+  @override
+  String get noTeamSubtitle => 'أنشئ فريقك الفانتازي لبدء اللعب';
+
+  @override
+  String get teamNameLabel => 'اسم الفريق';
+
+  @override
+  String get createTeam => 'إنشاء الفريق';
+
+  @override
+  String get mySquad => 'تشكيلتي';
+
+  @override
+  String get budget => 'الميزانية';
+
+  @override
+  String get squadValue => 'قيمة التشكيلة';
+
+  @override
+  String get points => 'النقاط';
+
+  @override
+  String get pickPlayer => 'اختر لاعبا';
+
+  @override
+  String get searchPlayers => 'ابحث عن اللاعبين';
+
+  @override
+  String get saveSquad => 'حفظ التشكيلة';
+
+  @override
+  String get squadSaved => 'تم حفظ التشكيلة';
+
+  @override
+  String get captain => 'القائد';
+
+  @override
+  String get viceCaptain => 'نائب القائد';
+
+  @override
+  String get emptySlot => 'فارغ';
+
+  @override
+  String get removeFromSquad => 'إزالة';
+
+  @override
+  String get editSquad => 'تعديل التشكيلة';
+
+  @override
+  String get squadFull => 'اكتملت التشكيلة (15 لاعبا)';
+
+  @override
+  String get signInToPlay => 'سجل الدخول لإدارة فريقك';
+
+  @override
+  String get loadMore => 'تحميل المزيد';
+
+  @override
+  String get viewPitch => 'الملعب';
+
+  @override
+  String get viewList => 'القائمة';
+
+  @override
+  String get benchTitle => 'الاحتياط';
+
+  @override
   String get homeComingSoonDesc =>
       'ستتوفر شاشة الرئيسية مع المباريات المباشرة والمواعيد والأخبار قريباً.';
 
@@ -211,6 +280,75 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noEvents => 'لا توجد أحداث بعد';
+
+  @override
+  String get timelineTitle => 'أبرز اللحظات';
+
+  @override
+  String get noKeyEvents => 'لا توجد لحظات بارزة بعد';
+
+  @override
+  String get topPerformers => 'نجوم المباراة';
+
+  @override
+  String fixturesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count مباراة',
+      many: '$count مباراة',
+      few: '$count مباريات',
+      two: 'مباراتان',
+      one: 'مباراة واحدة',
+      zero: 'لا مباريات',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String goalsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count هدف',
+      many: '$count هدفا',
+      few: '$count أهداف',
+      two: 'هدفان',
+      one: 'هدف واحد',
+      zero: 'لا أهداف',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String assistsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count تمريرة حاسمة',
+      many: '$count تمريرة حاسمة',
+      few: '$count تمريرات حاسمة',
+      two: 'تمريرتان حاسمتان',
+      one: 'تمريرة حاسمة واحدة',
+      zero: 'لا تمريرات حاسمة',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String savesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count تصد',
+      many: '$count تصديا',
+      few: '$count تصديات',
+      two: 'تصديان',
+      one: 'تصد واحد',
+      zero: 'لا تصديات',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get statusAll => 'الكل';

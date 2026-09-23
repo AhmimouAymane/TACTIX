@@ -34,6 +34,29 @@
   "register": "S'inscrire",
   "signOut": "Se déconnecter",
   "comingSoon": "Bientôt disponible",
+  "noTeamTitle": "Pas encore d'équipe",
+  "noTeamSubtitle": "Créez votre équipe fantasy pour commencer",
+  "teamNameLabel": "Nom de l'équipe",
+  "createTeam": "Créer l'équipe",
+  "mySquad": "Mon effectif",
+  "budget": "Budget",
+  "squadValue": "Valeur de l'effectif",
+  "points": "Points",
+  "pickPlayer": "Choisir un joueur",
+  "searchPlayers": "Rechercher des joueurs",
+  "saveSquad": "Enregistrer",
+  "squadSaved": "Effectif enregistré",
+  "captain": "Capitaine",
+  "viceCaptain": "Vice-capitaine",
+  "emptySlot": "Vide",
+  "removeFromSquad": "Retirer",
+  "editSquad": "Modifier",
+  "squadFull": "Effectif complet (15 joueurs)",
+  "signInToPlay": "Connectez-vous pour gérer votre équipe",
+  "loadMore": "Charger plus",
+  "viewPitch": "Terrain",
+  "viewList": "Liste",
+  "benchTitle": "Banc",
   "homeComingSoonDesc": "L'écran d'accueil avec les matchs en direct, échéances et actualités sera bientôt disponible.",
   "liveComingSoonDesc": "Le suivi des matchs en direct avec mises à jour temps réel sera bientôt disponible.",
   "teamComingSoonDesc": "La gestion d'effectif fantasy avec vue terrain sera bientôt disponible.",
@@ -71,6 +94,33 @@
   "matchEvents": "Événements du match",
   "noFixtures": "Aucun match à afficher",
   "noEvents": "Aucun événement pour le moment",
+  "timelineTitle": "Moments clés",
+  "noKeyEvents": "Aucun moment clé pour le moment",
+  "topPerformers": "Meilleurs joueurs",
+  "fixturesCount": "{count, plural, =0{Aucun match} =1{1 match} other{{count} matchs}}",
+  "@fixturesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "goalsCount": "{count, plural, =0{Aucun but} =1{1 but} other{{count} buts}}",
+  "@goalsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "assistsCount": "{count, plural, =0{Aucune passe décisive} =1{1 passe décisive} other{{count} passes décisives}}",
+  "@assistsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "savesCount": "{count, plural, =0{Aucun arrêt} =1{1 arrêt} other{{count} arrêts}}",
+  "@savesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
   "statusAll": "Toutes",
   "statusScheduled": "Programmée",
   "statusLive": "En direct",

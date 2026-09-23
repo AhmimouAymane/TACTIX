@@ -4,6 +4,7 @@ class MatchEvent {
     required this.type,
     required this.minute,
     this.playerName,
+    this.playerClubId,
     this.detail,
   });
 
@@ -11,6 +12,7 @@ class MatchEvent {
   final String type;
   final int minute;
   final String? playerName;
+  final String? playerClubId;
   final String? detail;
 
   factory MatchEvent.fromJson(Map<String, dynamic> json) {
@@ -27,6 +29,9 @@ class MatchEvent {
       type: json['type'] as String? ?? 'VAR_DECISION',
       minute: json['minute'] as int? ?? 0,
       playerName: playerName,
+      playerClubId: player is Map<String, dynamic>
+          ? player['clubId'] as String?
+          : null,
       detail: json['detail'] as String?,
     );
   }

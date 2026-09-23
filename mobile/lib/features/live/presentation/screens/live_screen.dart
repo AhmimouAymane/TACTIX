@@ -23,7 +23,12 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
     super.initState();
     Future.microtask(() {
       ref.read(gameweeksControllerProvider.notifier).load();
-      ref.read(fixturesControllerProvider.notifier).load();
+      // The fixtures controller is shared with Home (which scopes it to the
+      // current gameweek) — reset to match this screen's All/All chips.
+      ref.read(fixturesControllerProvider.notifier).load(
+            clearGameweek: true,
+            clearStatus: true,
+          );
     });
   }
 
@@ -33,6 +38,8 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
       ref.read(fixturesControllerProvider.notifier).load(
             gameweekId: _gameweekId,
             status: _status,
+            clearGameweek: _gameweekId == null,
+            clearStatus: _status == null,
           ),
     ]);
   }
@@ -95,7 +102,7 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
                     setState(() => _gameweekId = null);
                     ref
                         .read(fixturesControllerProvider.notifier)
-                        .load(status: _status);
+                        .load(clearGameweek: true, status: _status);
                   },
                 ),
               ),
@@ -103,7 +110,9 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
                 (gameweek) => Padding(
                   padding: const EdgeInsets.only(right: AppSpacing.sm),
                   child: _FilterChip(
-                    label: l10n.gameweekNumber('${gameweek.number}'),
+                    label: gameweek.seasonTag.isEmpty
+                        ? l10n.gameweekNumber('${gameweek.number}')
+                        : '${l10n.gameweekNumber('${gameweek.number}')} · ${gameweek.seasonTag}',
                     selected: _gameweekId == gameweek.id,
                     onSelected: () {
                       setState(() => _gameweekId = gameweek.id);
@@ -147,7 +156,11 @@ class _LiveScreenState extends ConsumerState<LiveScreen> {
                       setState(() => _status = entry.$1);
                       ref
                           .read(fixturesControllerProvider.notifier)
-                          .load(gameweekId: _gameweekId, status: entry.$1);
+                          .load(
+                            gameweekId: _gameweekId,
+                            status: entry.$1,
+                            clearStatus: entry.$1 == null,
+                          );
                     },
                   ),
                 ),

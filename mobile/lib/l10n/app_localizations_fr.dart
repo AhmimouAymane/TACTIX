@@ -114,6 +114,75 @@ class AppLocalizationsFr extends AppLocalizations {
   String get comingSoon => 'Bientôt disponible';
 
   @override
+  String get noTeamTitle => 'Pas encore d\'équipe';
+
+  @override
+  String get noTeamSubtitle => 'Créez votre équipe fantasy pour commencer';
+
+  @override
+  String get teamNameLabel => 'Nom de l\'équipe';
+
+  @override
+  String get createTeam => 'Créer l\'équipe';
+
+  @override
+  String get mySquad => 'Mon effectif';
+
+  @override
+  String get budget => 'Budget';
+
+  @override
+  String get squadValue => 'Valeur de l\'effectif';
+
+  @override
+  String get points => 'Points';
+
+  @override
+  String get pickPlayer => 'Choisir un joueur';
+
+  @override
+  String get searchPlayers => 'Rechercher des joueurs';
+
+  @override
+  String get saveSquad => 'Enregistrer';
+
+  @override
+  String get squadSaved => 'Effectif enregistré';
+
+  @override
+  String get captain => 'Capitaine';
+
+  @override
+  String get viceCaptain => 'Vice-capitaine';
+
+  @override
+  String get emptySlot => 'Vide';
+
+  @override
+  String get removeFromSquad => 'Retirer';
+
+  @override
+  String get editSquad => 'Modifier';
+
+  @override
+  String get squadFull => 'Effectif complet (15 joueurs)';
+
+  @override
+  String get signInToPlay => 'Connectez-vous pour gérer votre équipe';
+
+  @override
+  String get loadMore => 'Charger plus';
+
+  @override
+  String get viewPitch => 'Terrain';
+
+  @override
+  String get viewList => 'Liste';
+
+  @override
+  String get benchTitle => 'Banc';
+
+  @override
   String get homeComingSoonDesc =>
       'L\'écran d\'accueil avec les matchs en direct, échéances et actualités sera bientôt disponible.';
 
@@ -215,6 +284,63 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get noEvents => 'Aucun événement pour le moment';
+
+  @override
+  String get timelineTitle => 'Moments clés';
+
+  @override
+  String get noKeyEvents => 'Aucun moment clé pour le moment';
+
+  @override
+  String get topPerformers => 'Meilleurs joueurs';
+
+  @override
+  String fixturesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count matchs',
+      one: '1 match',
+      zero: 'Aucun match',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String goalsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count buts',
+      one: '1 but',
+      zero: 'Aucun but',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String assistsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count passes décisives',
+      one: '1 passe décisive',
+      zero: 'Aucune passe décisive',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String savesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count arrêts',
+      one: '1 arrêt',
+      zero: 'Aucun arrêt',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get statusAll => 'Toutes';

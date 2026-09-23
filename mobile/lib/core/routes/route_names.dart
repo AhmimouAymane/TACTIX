@@ -17,6 +17,7 @@ class AppRoutes {
   static const String search = '/search';
   static const String premium = '/premium';
   static const String fixtureDetail = '/fixtures/:id';
+  static const String squadBuilder = '/team/builder';
 }
 
 class RouteNames {
@@ -34,4 +35,5 @@ class RouteNames {
   static const String search = 'search';
   static const String premium = 'premium';
   static const String fixtureDetail = 'fixtureDetail';
+  static const String squadBuilder = 'squadBuilder';
 }

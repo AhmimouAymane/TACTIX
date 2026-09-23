@@ -17,7 +17,7 @@ class AppTheme {
           onSecondary: AppColors.onSecondary,
           secondaryContainer: AppColors.secondaryContainer,
           onSecondaryContainer: AppColors.onSecondaryContainer,
-          tertiary: AppColors.accentGreen,
+          tertiary: AppColors.accentBlue,
           onTertiary: AppColors.onPrimary,
           error: AppColors.error,
           onError: AppColors.onPrimary,
@@ -70,10 +70,10 @@ class AppTheme {
           onSecondary: AppColors.lightOnSecondary,
           secondaryContainer: AppColors.lightSecondaryContainer,
           onSecondaryContainer: AppColors.lightOnSecondaryContainer,
-          tertiary: AppColors.accentGreen,
-          onTertiary: AppColors.lightOnPrimary,
+          tertiary: AppColors.accentBlue,
+          onTertiary: AppColors.onPrimary,
           error: AppColors.error,
-          onError: AppColors.lightOnPrimary,
+          onError: AppColors.onPrimary,
           surface: AppColors.lightSurfaceCard,
           onSurface: AppColors.lightTextPrimary,
           surfaceContainerHighest: AppColors.lightSurfaceElevated,
@@ -210,8 +210,8 @@ class AppTheme {
 
   static final _lightElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: AppColors.lightPrimary,
-      foregroundColor: AppColors.lightOnPrimary,
+      backgroundColor: AppColors.green,
+      foregroundColor: AppColors.onGreen,
       elevation: 0,
       shadowColor: Colors.transparent,
       padding: const EdgeInsets.symmetric(
@@ -244,8 +244,8 @@ class AppTheme {
 
   static final _lightFilledButtonTheme = FilledButtonThemeData(
     style: FilledButton.styleFrom(
-      backgroundColor: AppColors.lightPrimary,
-      foregroundColor: AppColors.lightOnPrimary,
+      backgroundColor: AppColors.green,
+      foregroundColor: AppColors.onGreen,
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.lg,
         vertical: AppSpacing.md,
@@ -454,7 +454,7 @@ class AppTheme {
 
   static final _darkChipTheme = ChipThemeData(
     backgroundColor: AppColors.secondary,
-    selectedColor: AppColors.primary.withValues(alpha: 0.2),
+    selectedColor: AppColors.primary,
     disabledColor: AppColors.divider,
     padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.xs),
     labelStyle: AppTypography.labelMedium.copyWith(color: AppColors.textPrimary),
@@ -469,7 +469,7 @@ class AppTheme {
 
   static final _lightChipTheme = ChipThemeData(
     backgroundColor: AppColors.lightSecondaryContainer,
-    selectedColor: AppColors.lightPrimary.withValues(alpha: 0.2),
+    selectedColor: AppColors.lightPrimary,
     disabledColor: AppColors.lightDivider,
     padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: AppSpacing.xs),
     labelStyle: AppTypography.labelMedium.copyWith(color: AppColors.lightTextPrimary),
@@ -734,8 +734,8 @@ class AppTheme {
   );
 
   static final _lightFabTheme = FloatingActionButtonThemeData(
-    backgroundColor: AppColors.lightPrimary,
-    foregroundColor: AppColors.lightOnPrimary,
+    backgroundColor: AppColors.green,
+    foregroundColor: AppColors.onGreen,
     elevation: 4,
     focusElevation: 6,
     hoverElevation: 6,

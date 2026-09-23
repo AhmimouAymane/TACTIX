@@ -13,9 +13,16 @@ class FixturesController extends StateNotifier<FixturesState> {
   String? _gameweekId;
   String? _status;
 
-  Future<void> load({String? gameweekId, String? status}) async {
-    _gameweekId = gameweekId ?? _gameweekId;
-    _status = status ?? _status;
+  Future<void> load({
+    String? gameweekId,
+    String? status,
+    bool clearGameweek = false,
+    bool clearStatus = false,
+  }) async {
+    // NOTE: null means "leave unchanged" — pass the clear flags to reset a
+    // filter (the "All" chips). Plain `??` can never clear a previous value.
+    _gameweekId = clearGameweek ? null : (gameweekId ?? _gameweekId);
+    _status = clearStatus ? null : (status ?? _status);
     state = const FixturesLoading();
 
     try {

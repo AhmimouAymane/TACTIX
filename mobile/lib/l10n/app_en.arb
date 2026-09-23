@@ -34,6 +34,29 @@
   "register": "Sign Up",
   "signOut": "Sign Out",
   "comingSoon": "Coming Soon",
+  "noTeamTitle": "No team yet",
+  "noTeamSubtitle": "Create your fantasy team to start playing",
+  "teamNameLabel": "Team name",
+  "createTeam": "Create team",
+  "mySquad": "My squad",
+  "budget": "Budget",
+  "squadValue": "Squad value",
+  "points": "Points",
+  "pickPlayer": "Pick player",
+  "searchPlayers": "Search players",
+  "saveSquad": "Save squad",
+  "squadSaved": "Squad saved",
+  "captain": "Captain",
+  "viceCaptain": "Vice-captain",
+  "emptySlot": "Empty",
+  "removeFromSquad": "Remove",
+  "editSquad": "Edit squad",
+  "squadFull": "Squad is full (15 players)",
+  "signInToPlay": "Sign in to manage your team",
+  "loadMore": "Load more",
+  "viewPitch": "Pitch",
+  "viewList": "List",
+  "benchTitle": "Bench",
   "homeComingSoonDesc": "Home screen with live matches, deadlines, and news will be available soon.",
   "liveComingSoonDesc": "Live match tracking with real-time updates will be available soon.",
   "teamComingSoonDesc": "Fantasy squad management with pitch view will be available soon.",
@@ -71,6 +94,33 @@
   "matchEvents": "Match events",
   "noFixtures": "No fixtures to show",
   "noEvents": "No match events yet",
+  "timelineTitle": "Key moments",
+  "noKeyEvents": "No key moments yet",
+  "topPerformers": "Top performers",
+  "fixturesCount": "{count, plural, =1{1 fixture} other{{count} fixtures}}",
+  "@fixturesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "goalsCount": "{count, plural, =1{1 goal} other{{count} goals}}",
+  "@goalsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "assistsCount": "{count, plural, =1{1 assist} other{{count} assists}}",
+  "@assistsCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "savesCount": "{count, plural, =1{1 save} other{{count} saves}}",
+  "@savesCount": {
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
   "statusAll": "All",
   "statusScheduled": "Scheduled",
   "statusLive": "Live",

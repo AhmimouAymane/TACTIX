@@ -304,6 +304,144 @@ abstract class AppLocalizations {
   /// **'Coming Soon'**
   String get comingSoon;
 
+  /// No description provided for @noTeamTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No team yet'**
+  String get noTeamTitle;
+
+  /// No description provided for @noTeamSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your fantasy team to start playing'**
+  String get noTeamSubtitle;
+
+  /// No description provided for @teamNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Team name'**
+  String get teamNameLabel;
+
+  /// No description provided for @createTeam.
+  ///
+  /// In en, this message translates to:
+  /// **'Create team'**
+  String get createTeam;
+
+  /// No description provided for @mySquad.
+  ///
+  /// In en, this message translates to:
+  /// **'My squad'**
+  String get mySquad;
+
+  /// No description provided for @budget.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget'**
+  String get budget;
+
+  /// No description provided for @squadValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Squad value'**
+  String get squadValue;
+
+  /// No description provided for @points.
+  ///
+  /// In en, this message translates to:
+  /// **'Points'**
+  String get points;
+
+  /// No description provided for @pickPlayer.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick player'**
+  String get pickPlayer;
+
+  /// No description provided for @searchPlayers.
+  ///
+  /// In en, this message translates to:
+  /// **'Search players'**
+  String get searchPlayers;
+
+  /// No description provided for @saveSquad.
+  ///
+  /// In en, this message translates to:
+  /// **'Save squad'**
+  String get saveSquad;
+
+  /// No description provided for @squadSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Squad saved'**
+  String get squadSaved;
+
+  /// No description provided for @captain.
+  ///
+  /// In en, this message translates to:
+  /// **'Captain'**
+  String get captain;
+
+  /// No description provided for @viceCaptain.
+  ///
+  /// In en, this message translates to:
+  /// **'Vice-captain'**
+  String get viceCaptain;
+
+  /// No description provided for @emptySlot.
+  ///
+  /// In en, this message translates to:
+  /// **'Empty'**
+  String get emptySlot;
+
+  /// No description provided for @removeFromSquad.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get removeFromSquad;
+
+  /// No description provided for @editSquad.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit squad'**
+  String get editSquad;
+
+  /// No description provided for @squadFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Squad is full (15 players)'**
+  String get squadFull;
+
+  /// No description provided for @signInToPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to manage your team'**
+  String get signInToPlay;
+
+  /// No description provided for @loadMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Load more'**
+  String get loadMore;
+
+  /// No description provided for @viewPitch.
+  ///
+  /// In en, this message translates to:
+  /// **'Pitch'**
+  String get viewPitch;
+
+  /// No description provided for @viewList.
+  ///
+  /// In en, this message translates to:
+  /// **'List'**
+  String get viewList;
+
+  /// No description provided for @benchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bench'**
+  String get benchTitle;
+
   /// No description provided for @homeComingSoonDesc.
   ///
   /// In en, this message translates to:
@@ -495,6 +633,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No match events yet'**
   String get noEvents;
+
+  /// No description provided for @timelineTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Key moments'**
+  String get timelineTitle;
+
+  /// No description provided for @noKeyEvents.
+  ///
+  /// In en, this message translates to:
+  /// **'No key moments yet'**
+  String get noKeyEvents;
+
+  /// No description provided for @topPerformers.
+  ///
+  /// In en, this message translates to:
+  /// **'Top performers'**
+  String get topPerformers;
+
+  /// No description provided for @fixturesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 fixture} other{{count} fixtures}}'**
+  String fixturesCount(int count);
+
+  /// No description provided for @goalsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 goal} other{{count} goals}}'**
+  String goalsCount(int count);
+
+  /// No description provided for @assistsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 assist} other{{count} assists}}'**
+  String assistsCount(int count);
+
+  /// No description provided for @savesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 save} other{{count} saves}}'**
+  String savesCount(int count);
 
   /// No description provided for @statusAll.
   ///

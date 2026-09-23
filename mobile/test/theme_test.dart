@@ -29,26 +29,39 @@ void main() {
       expect(AppTheme.light.scaffoldBackgroundColor, equals(AppColors.lightSurfaceBackground));
     });
 
-    test('dark theme uses Inter font family', () {
+    test('dark theme uses Barlow font family', () {
       expect(AppTheme.dark.textTheme.bodyMedium?.fontFamily, equals(AppTypography.fontFamily));
     });
 
-    test('light theme uses Inter font family', () {
+    test('light theme uses Barlow font family', () {
       expect(AppTheme.light.textTheme.bodyMedium?.fontFamily, equals(AppTypography.fontFamily));
+    });
+
+    test('display styles use Barlow Condensed', () {
+      expect(AppTheme.dark.textTheme.headlineSmall?.fontFamily,
+          equals(AppTypography.displayFontFamily));
     });
   });
 
   group('AppColors', () {
-    test('primary color is correct', () {
-      expect(AppColors.primary, equals(const Color(0xFFFFB020)));
+    test('primary color is FPL mint', () {
+      expect(AppColors.primary, equals(const Color(0xFF00FF87)));
     });
 
-    test('dark background color is correct', () {
-      expect(AppColors.surfaceBackground, equals(const Color(0xFF0F172A)));
+    test('dark background color is PL purple', () {
+      expect(AppColors.surfaceBackground, equals(const Color(0xFF37003C)));
     });
 
     test('light background color is correct', () {
-      expect(AppColors.lightSurfaceBackground, equals(const Color(0xFFF8FAFC)));
+      expect(AppColors.lightSurfaceBackground, equals(const Color(0xFFF7F1F8)));
+    });
+
+    test('position colors are distinct', () {
+      expect(AppColors.posGk, isNot(AppColors.posDef));
+      expect(AppColors.posDef, isNot(AppColors.posMid));
+      expect(AppColors.posMid, isNot(AppColors.posFwd));
+      expect(AppColors.position('GK'), equals(AppColors.posGk));
+      expect(AppColors.position('SUB'), equals(AppColors.posSub));
     });
   });
 

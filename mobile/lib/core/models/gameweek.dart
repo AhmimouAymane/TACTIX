@@ -23,6 +23,14 @@ class Gameweek {
 
   bool get isCurrent => status == 'OPEN' || status == 'LIVE';
 
+  /// Short season tag to disambiguate same-number gameweeks across
+  /// competitions ("25/26" from "Botola Pro D1 25/26").
+  String get seasonTag {
+    final name = competitionName ?? '';
+    final parts = name.split(' ').where((p) => p.isNotEmpty).toList();
+    return parts.isEmpty ? '' : parts.last;
+  }
+
   factory Gameweek.fromJson(Map<String, dynamic> json) {
     final competition = json['competition'];
     final count = json['_count'];
