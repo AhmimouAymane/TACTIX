@@ -14,6 +14,7 @@ import { RankingsModule } from './modules/rankings/rankings.module';
 import { NewsModule } from './modules/news/news.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { AdminModule } from './modules/admin/admin.module';
+import { BsdModule } from './modules/integrations/bsd/bsd.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { AdminModule } from './modules/admin/admin.module';
     NewsModule,
     NotificationsModule,
     AdminModule,
+    BsdModule,
   ],
 })
 export class AppModule {}
